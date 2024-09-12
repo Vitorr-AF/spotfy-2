@@ -97,8 +97,19 @@ def conferir_musicas():
 
 def baixar_musicas():
     print('Nada aqui por enquanto')
+
+
 def selecionar_pasta():
     os.system('cls')
+    dados = json_texto()
+    print(f"Pasta atual: {dados['pasta']}")
+    print("Digite o caminho da pasta: ")
+    pasta = input("")
+    dados['pasta'] = pasta
+    with open("dados.json", "w") as arquivo:
+        json.dump(dados, arquivo, indent=4)
+    
+
 
 
 def mostrar_info():
